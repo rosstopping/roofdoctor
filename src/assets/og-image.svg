@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Roof Doctor open graph image">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect x="72" y="72" width="1056" height="486" fill="#111827" stroke="#fbbf24" stroke-width="8"/>
+  <path d="M185 322 600 120l415 202" fill="none" stroke="#fbbf24" stroke-width="28" stroke-linecap="square"/>
+  <path d="M294 326h612" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="square"/>
+  <path d="M402 326V218h396v108" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="square"/>
+  <path d="M546 326v-72h108v72" fill="none" stroke="#fbbf24" stroke-width="24" stroke-linecap="square"/>
+  <text x="96" y="470" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="88" font-weight="700" letter-spacing="5">ROOF DOCTOR</text>
+  <text x="96" y="535" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="34" letter-spacing="3">DONCASTER ROOFERS WHO TAKE PRIDE IN THE JOB</text>
+</svg>
