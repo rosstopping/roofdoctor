@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ description or site.description }}">
+  <title>{{ title }}{% if title != site.name %} | {{ site.name }}{% endif %}</title>
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="bg-stone-50 font-sans text-slate-950 antialiased">
+  <header class="border-b border-slate-950/10"><nav class="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-5 lg:px-8" aria-label="Primary"><a href="/" class="text-lg font-semibold">{{ site.name }}</a><a href="/contact/" class="text-sm font-semibold text-teal-700">Contact</a></nav></header>
+  <main>{{ content | safe }}</main>
+  <footer class="border-t border-slate-950/10"><div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-600 lg:px-8">&copy; {{ site.name }}</div></footer>
+</body>
+</html>
