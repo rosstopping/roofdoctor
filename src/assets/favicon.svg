@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Roof Doctor favicon">
+  <rect width="64" height="64" fill="#0f172a"/>
+  <path d="M8 34 32 14l24 20" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="square"/>
+  <path d="M18 34h28" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="square"/>
+  <path d="M24 34V24h16v10" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="square"/>
+</svg>

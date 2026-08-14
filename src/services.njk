@@ -1,0 +1,61 @@
+---
+layout: base.njk
+title: Roofing Services
+description: Explore Roof Doctor’s roofing services for Doncaster and South Yorkshire, including roof repairs, complete new roofs, and work for homes and businesses.
+permalink: /services/index.html
+---
+<section class="border-b border-slate-900/10 bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8 lg:py-18">
+    <p class="text-sm font-bold uppercase tracking-[0.2em] text-amber-700">Services</p>
+    <h1 class="mt-4 max-w-4xl text-5xl font-black uppercase tracking-tight text-slate-950 sm:text-6xl">Roofing services built around clear advice, solid workmanship, and tidy sites.</h1>
+    <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-700">Roof Doctor handles work from quick repairs through to complete new roofs. We work across Doncaster and South Yorkshire for homeowners and businesses who want the job done properly.</p>
+  </div>
+</section>
+
+<section class="bg-stone-100">
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+    <div class="grid gap-px border border-slate-900 bg-slate-900 lg:grid-cols-2">
+      {% for service in site.serviceHighlights %}
+        <article class="bg-white p-8 sm:p-10">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">{{ service.title }}</p>
+          <p class="mt-4 text-base leading-7 text-slate-700">{{ service.summary }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="border-y border-slate-900/10 bg-white">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1fr_1fr] lg:px-8">
+    <article>
+      <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">When to get in touch</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950">Urgent repairs and planned roofing work both need the right advice.</h2>
+      <p class="mt-5 text-base leading-7 text-slate-700">Some enquiries are urgent because the roof has developed a fault that needs attention quickly. Others are more considered, such as pricing a complete new roof. In both cases, customers need an experienced roofing team that can explain the job clearly and recommend the right solution.</p>
+    </article>
+    <article>
+      <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">What to expect</p>
+      <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950">A practical service from first enquiry to finished roof.</h2>
+      <p class="mt-5 text-base leading-7 text-slate-700">You can expect honest communication, a fair quote, and work carried out with pride. The goal is not to overcomplicate things, but to make sure you understand what needs doing and feel confident in the standard of the result.</p>
+    </article>
+  </div>
+</section>
+
+<section class="bg-stone-200">
+  <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+    <p class="text-sm font-bold uppercase tracking-[0.18em] text-amber-700">How the job runs</p>
+    <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">From first message to finished job, the process stays clear.</h2>
+    <div class="mt-10 grid gap-6 lg:grid-cols-4">
+      {% for item in site.process %}
+        <article class="border border-slate-900 bg-white p-6">
+          <p class="text-sm font-black uppercase tracking-[0.18em] text-amber-700">{{ item.step }}</p>
+          <h3 class="mt-4 text-xl font-bold text-slate-950">{{ item.title }}</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-700">{{ item.summary }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% set ctaTitle = "Need help with a repair or thinking about a complete new roof?" %}
+{% set ctaCopy = "Use the contact form to tell us about the work you need in Doncaster or South Yorkshire. We will come back with practical next steps and a straightforward quote process." %}
+{% include "partials/contact-cta.njk" %}

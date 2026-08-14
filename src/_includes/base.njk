@@ -1,15 +1,45 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en-GB" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="{{ description or site.description }}">
+  <meta name="theme-color" content="#1f2937">
   <title>{{ title }}{% if title != site.name %} | {{ site.name }}{% endif %}</title>
+  {% set absolutePageUrl = page.url %}
+  {% if site.url %}{% set absolutePageUrl = site.url + page.url %}{% endif %}
+  {% set absoluteOgImage = site.ogImage %}
+  {% if site.url and site.ogImage %}{% set absoluteOgImage = site.url + site.ogImage %}{% endif %}
+  {% if site.url %}<link rel="canonical" href="{{ absolutePageUrl }}">{% endif %}
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="{{ site.locale }}">
+  <meta property="og:title" content="{{ title }}{% if title != site.name %} | {{ site.name }}{% endif %}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  {% if site.url %}<meta property="og:url" content="{{ absolutePageUrl }}">{% endif %}
+  {% if absoluteOgImage %}<meta property="og:image" content="{{ absoluteOgImage }}">{% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RoofingContractor",
+      "name": {{ site.name | dump | safe }},
+      "description": {{ site.description | dump | safe }},
+      "areaServed": {{ site.areas | dump | safe }},
+      "serviceType": ["Roof repairs", "New roofs", "Domestic roofing", "Commercial roofing"]{% if site.url %},
+      "url": {{ absolutePageUrl | dump | safe }}{% endif %}
+    }
+  </script>
 </head>
-<body class="bg-stone-50 font-sans text-slate-950 antialiased">
-  <header class="border-b border-slate-950/10"><nav class="mx-auto flex max-w-6xl items-center justify-between gap-8 px-6 py-5 lg:px-8" aria-label="Primary"><a href="/" class="text-lg font-semibold">{{ site.name }}</a><a href="/contact/" class="text-sm font-semibold text-teal-700">Contact</a></nav></header>
-  <main>{{ content | safe }}</main>
-  <footer class="border-t border-slate-950/10"><div class="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-600 lg:px-8">&copy; {{ site.name }}</div></footer>
+<body class="bg-stone-100 font-sans text-slate-900 antialiased">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-950">Skip to content</a>
+  {% include "partials/header.njk" %}
+  <main id="main-content">{{ content | safe }}</main>
+  {% include "partials/footer.njk" %}
+  <div class="sticky bottom-0 z-30 border-t border-slate-900 bg-white/95 px-4 py-3 shadow-[0_-8px_24px_rgba(15,23,42,0.08)] backdrop-blur sm:hidden">
+    <a href="/contact/" class="flex items-center justify-center bg-amber-500 px-4 py-3 text-sm font-bold uppercase tracking-[0.18em] text-slate-950 motion-safe:transition hover:bg-amber-400 motion-reduce:transition-none">Request a quote</a>
+  </div>
 </body>
 </html>
